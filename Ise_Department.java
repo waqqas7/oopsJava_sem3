@@ -82,7 +82,7 @@ public class ISE_department implements Department
     }
     public int number_research_consultancy_projs(int i)
     {
-        return (Faculty.exp_yrs[i]* Faculty.subjects_handled[i])/4;
+        return (Faculty.exp_yrs[i]*Faculty.subjects_handled[i])/4;
     }
 
 }
