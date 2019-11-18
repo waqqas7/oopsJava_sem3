@@ -63,6 +63,7 @@ public class ISE_department implements Department
         {
             if (Faculty.exp_yrs[i] >= 20)
             {
+                System.out.println("\n-----------------------------------------------\n");
                 System.out.println("Name : " + Faculty.name[i]);
                 System.out.println("Designation : " + Faculty.desig[i]);
                 System.out.println("Age : " + Faculty.age[i]);
@@ -71,7 +72,6 @@ public class ISE_department implements Department
                 System.out.println("Subjects Handled : " + Faculty.subjects_handled[i]);
                 print_number_designations(i);
                 System.out.println("Number of Research Consultancy Projects : " + number_research_consultancy_projs(i));
-                System.out.println("\n-----------------------------------------------\n");
             }
         }
     }
