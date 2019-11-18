@@ -36,7 +36,7 @@ class Segment extends Circle
     }
     double area()
     {
-        return Math.abs(Math.pow(r,2)*Math.toRadians((r-h)/r)) - ((r-h)*Math.sqrt((2*r*h)-Math.pow(h,2)));
+        return Math.abs((Math.pow(r,2)*Math.toRadians((r-h)/r)) - ((r-h)*Math.sqrt((2*r*h)-Math.pow(h,2))));
     }
 }
 class compute
@@ -47,14 +47,14 @@ class compute
         System.out.println("Enter the radius of a circle");
         double r=sc.nextDouble();
         Circle ob1 = new Circle(r);
-        System.out.println("Area of Circle = "+ob1.area());
         System.out.println("Enter the control angle of a sector");
         double ang=sc.nextDouble();
         Sector ob2 = new Sector(r,ang);
-        System.out.println("Area of Sector = "+ob2.area());
         System.out.println("Enter the length of a segment in a circle");
         double l=sc.nextDouble();
         Segment ob3 = new Segment(r,l);
+        System.out.println("Area of Circle = "+ob1.area());
+        System.out.println("Area of Sector = "+ob2.area());
         System.out.println("Area of Segment = "+ob3.area());
     }
 }
