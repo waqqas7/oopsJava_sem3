@@ -16,7 +16,7 @@ public class Faculty
 package com.example.javalib.ISE;
 import java.util.Scanner;
 import com.example.javalib.Department;
-import com.example.javalib.Faculty;
+import static com.example.javalib.Faculty.*;
 class AgeException extends Exception
 {
     AgeException(String s)
@@ -29,15 +29,15 @@ public class ISE_department implements Department
     Scanner sc = new Scanner(System.in);
     public void readdata()
     {
-        for (int i = 0; i < Faculty.n; i++)
+        for (int i = 0; i < n; i++)
         {
             System.out.println("Enter the name");
-            Faculty.name[i] = sc.nextLine();
+            name[i] = sc.nextLine();
             System.out.println("Enter the age");
-            Faculty.age[i] = sc.nextInt();
+            age[i] = sc.nextInt();
             try
             {
-                if(Faculty.age[i]<1 || Faculty.age[i]>58)
+                if(age[i]<1 || age[i]>58)
                     throw new AgeException("Invalid Age.Should be between 0 and 59.");
             }
             catch (Exception e) {
@@ -46,30 +46,30 @@ public class ISE_department implements Department
             }
             sc.nextLine();
             System.out.println("Enter the designation (format : abc or abc,xyz,etc)");
-            Faculty.desig[i] = sc.nextLine();
+            desig[i] = sc.nextLine();
             System.out.println("Enter the years of experience");
-            Faculty.exp_yrs[i] = sc.nextInt();
+            exp_yrs[i] = sc.nextInt();
             sc.nextLine();
             System.out.println("Enter the joining date (format : dd/mm/yyyy)");
-            Faculty.joining_date[i] = sc.nextLine();
+            joining_date[i] = sc.nextLine();
             System.out.println("Enter the number of subjects handled");
-            Faculty.subjects_handled[i] = sc.nextInt();
+            subjects_handled[i] = sc.nextInt();
             sc.nextLine();
         }
     }
     public void printdata()
     {
-        for (int i = 0; i < Faculty.n; i++)
+        for (int i = 0; i < n; i++)
         {
-            if (Faculty.exp_yrs[i] >= 20)
+            if (exp_yrs[i] >= 20)
             {
                 System.out.println("\n-----------------------------------------------\n");
-                System.out.println("Name : " + Faculty.name[i]);
-                System.out.println("Designation : " + Faculty.desig[i]);
-                System.out.println("Age : " + Faculty.age[i]);
-                System.out.println("Years of Experience : " + Faculty.exp_yrs[i]);
-                System.out.println("Joining Date : " + Faculty.joining_date[i]);
-                System.out.println("Subjects Handled : " + Faculty.subjects_handled[i]);
+                System.out.println("Name : " + name[i]);
+                System.out.println("Designation : " + desig[i]);
+                System.out.println("Age : " + age[i]);
+                System.out.println("Years of Experience : " + exp_yrs[i]);
+                System.out.println("Joining Date : " + joining_date[i]);
+                System.out.println("Subjects Handled : " + subjects_handled[i]);
                 print_number_designations(i);
                 System.out.println("Number of Research Consultancy Projects : " + number_research_consultancy_projs(i));
             }
@@ -77,15 +77,16 @@ public class ISE_department implements Department
     }
     public void print_number_designations(int i)
     {
-        int count = Faculty.desig[i].length() - Faculty.desig[i].replace(",","").length();
+        int count = desig[i].length() - desig[i].replace(",","").length();
         System.out.println("Number of Designations : "+(count+1));
     }
     public int number_research_consultancy_projs(int i)
     {
-        return (Faculty.exp_yrs[i]*Faculty.subjects_handled[i])/4;
+        return (exp_yrs[i]* subjects_handled[i])/4;
     }
 
 }
+
 
 
 
