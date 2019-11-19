@@ -104,7 +104,7 @@ class MainClass
 {
     public static void main(String args[])
     {
-        ISE_department o = new ISE_department();
+        Department o = new ISE_department();
         o.readdata();
         o.printdata();
     }
