@@ -17,13 +17,6 @@ package com.example.javalib.ISE;
 import java.util.Scanner;
 import com.example.javalib.Department;
 import static com.example.javalib.Faculty.*;
-class AgeException extends Exception
-{
-    AgeException(String s)
-    {
-        super(s);
-    }
-}
 public class ISE_department implements Department
 {
     Scanner sc = new Scanner(System.in);
@@ -38,7 +31,7 @@ public class ISE_department implements Department
             try
             {
                 if(age[i]<1 || age[i]>58)
-                    throw new AgeException("Invalid Age.Should be between 0 and 59.");
+                    throw new Exception("Invalid Age.Should be between 0 and 59.");
             }
             catch (Exception e) {
                 System.out.println("Exception occured : " +e);
