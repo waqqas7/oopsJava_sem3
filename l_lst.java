@@ -4,7 +4,7 @@ public class l_lst
 {
     public static void main(String args[])
     {
-        LinkedList<String> lst = new LinkedList<String>();
+        LinkedList<String> lst = new LinkedList<>();
         lst.add("Waqqas");
         lst.add("save");
         lst.addLast("Vinay");
