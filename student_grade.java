@@ -16,12 +16,11 @@ public class RegisterStudent
 {
     public RegisterStudent()
     {
-        Scanner sc = new Scanner(System.in);
         Student ob = new student();
         ob.getName();
         ob.getBranch();
         System.out.println("Enter the total numbers of credits registered");
-        int tot_cr = sc.nextInt();
+        int tot_cr = ( new Scanner(System.in) ).nextInt();
         try
         {
             if(tot_cr>30)
