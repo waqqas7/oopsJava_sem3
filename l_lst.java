@@ -2,7 +2,6 @@ package com.example.javalib;
 import java.util.*;
 public class l_lst
 {
-
     public static void main(String args[])
     {
         LinkedList<String> lst = new LinkedList<String>();
